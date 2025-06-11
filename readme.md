@@ -1,5 +1,7 @@
 # aishe-institutions-list
 
+https://www.npmjs.com/package/aishe-institutions-list
+
 A searchable list of all higher education institutions in India from AISHE data — including Universities, Colleges, Standalone Institutions, R&D Institutes, and PM Vidyalakshmi Institutes.
 
 Ideal for building autocomplete dropdowns, validation systems, or institutional directories.
