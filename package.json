@@ -1,13 +1,32 @@
 {
   "name": "aishe-institutions-list",
-  "version": "1.0.0",
-  "description": "Searchable list of Indian colleges, universities, standalone institutions, R&D centers from AISHE data",
+  "version": "1.0.1",
+  "description": "Searchable list of Indian colleges, universities, standalone institutions, and R&D centers from AISHE data",
   "main": "index.js",
-  "keywords": ["aishe", "institutions", "college", "university", "india", "education", "dropdown", "autocomplete"],
-  "author": "Brahmjot Singh",
+  "files": [
+    "index.js",
+    "data/"
+  ],
+  "keywords": [
+    "aishe",
+    "institutions",
+    "college",
+    "university",
+    "india",
+    "education",
+    "dropdown",
+    "autocomplete",
+    "college-list",
+    "search"
+  ],
+  "author": "brahmjotsingh0 Singh",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com//aishe-institutions-list"
-  }
+    "url": "https://github.com/brahmjotsingh0/aishe-institutions-list"
+  },
+  "bugs": {
+    "url": "https://github.com/brahmjotsingh0/aishe-institutions-list/issues"
+  },
+  "homepage": "https://github.com/brahmjotsingh0/aishe-institutions-list#readme"
 }

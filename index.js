@@ -1,20 +1,40 @@
-const fs = require('fs');
-const path = require('path');
+const path = require("path");
+const fs = require("fs");
 
-const files = [
-  'colleges.json',
-  'universities.json',
-  'standalone.json',
-  'rnd_institutes.json',
-  'vidyalakshmi.json'
-];
+const dataPath = path.join(__dirname, "data", "institutions.json");
+let institutions = [];
 
-let combined = [];
+try {
+  const rawData = fs.readFileSync(dataPath, "utf-8");
+  institutions = JSON.parse(rawData);
+} catch (err) {
+  console.error("❌ Failed to load institutions.json:", err.message);
+}
 
-files.forEach((file) => {
-  const data = JSON.parse(fs.readFileSync(path.join(__dirname, 'output', file), 'utf-8'));
-  combined = combined.concat(data);
-});
+/**
+ * Normalize text for search comparison
+ */
+function normalize(text) {
+  return text.toLowerCase().replace(/\s+/g, " ").trim();
+}
 
-fs.writeFileSync('institutions.json', JSON.stringify(combined, null, 2));
-console.log(`✅ Merged ${files.length} files into institutions.json (${combined.length} total entries)`);
+/**
+ * Search institutions by name
+ * @param {string} query - Partial or full name
+ * @param {number} limit - Max number of results (default: 10)
+ * @returns {Array} - Matching institution objects
+ */
+function search(query, limit = 10) {
+  if (!query) return [];
+
+  const q = normalize(query);
+
+  return institutions
+    .filter((item) => normalize(item.name).includes(q))
+    .slice(0, limit);
+}
+
+module.exports = {
+  search,
+  institutions, // export full list if needed
+};
