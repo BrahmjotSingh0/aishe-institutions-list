@@ -1,8 +1,10 @@
 {
   "name": "aishe-institutions-list",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Searchable list of Indian colleges, universities, standalone institutions, and R&D centers from AISHE data",
   "main": "index.js",
+  "module": "index.js",
+  "type": "module",
   "files": [
     "index.js",
     "data/"
